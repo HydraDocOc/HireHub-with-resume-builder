@@ -1,0 +1,40 @@
+{% extends "jobs/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Add New Company</h1>
+    
+    <form method="POST" class="needs-validation" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Add Company</button>
+            <a href="{% url 'job_portal:list_companies' %}" class="btn btn-secondary ms-2">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<!-- Add form validation JavaScript -->
+<script>
+(function () {
+    'use strict'
+    
+    // Fetch all forms we want to apply validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+    
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()
+</script>
+{% endblock %}
