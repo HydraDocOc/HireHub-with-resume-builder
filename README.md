@@ -40,8 +40,8 @@ HireHub is a Django-based web application that serves as a comprehensive job por
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/dikshaggarwal/hirehub.git
-cd hirehub
+git clone https://github.com/dikshaggarwal/HireHub-with-resume-builder.git
+cd HireHub-with-resume-builder
 ```
 
 2. **Create a Virtual Environment**
